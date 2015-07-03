@@ -1,0 +1,236 @@
+doctype html
+html(lang="en")
+  head
+    // start: Meta
+    meta(charset="utf-8")
+    title brewery dashboard | brewbone brewing systems
+    meta(name="description", content="brewing beer down to the bone")
+    meta(name="author", content="josh peltier")
+    meta(name="keyword", content="#")
+    // end: Meta
+    // start: Mobile Specific
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    // end: Mobile Specific
+    // start: CSS
+    link(href="assets/css/bootstrap.min.css", rel="stylesheet")
+    link(href="assets/css/style.css", rel="stylesheet")
+    link(href="assets/css/retina.min.css", rel="stylesheet")
+    // end: CSS
+    // The HTML5 shim, for IE6-8 support of HTML5 elements
+    //if lt IE 9
+      script(src="http://html5shim.googlecode.com/svn/trunk/html5.js")
+      script(src="assets/js/respond.min.js")
+      script(src="assets/css/ie6-8.css")
+    // start: Favicon and Touch Icons
+    link(rel="apple-touch-icon-precomposed", sizes="144x144", href="assets/ico/apple-touch-icon-144-precomposed.png")
+    link(rel="apple-touch-icon-precomposed", sizes="114x114", href="assets/ico/apple-touch-icon-114-precomposed.png")
+    link(rel="apple-touch-icon-precomposed", sizes="72x72", href="assets/ico/apple-touch-icon-72-precomposed.png")
+    link(rel="apple-touch-icon-precomposed", href="http://localhost:8888/bootstrap/simpliq2/ico/apple-touch-icon-57-precomposed.png")
+    link(rel="shortcut icon", href="http://localhost:8888/bootstrap/simpliq2/ico/favicon.png")
+    // end: Favicon and Touch Icons
+  body
+    // start: Header
+    // <div class="container">
+    // start: Main Menu
+    // start: Content
+    #content.col-lg-12.col-sm-12
+      .row
+        h2 Temperature Monitors
+      .row
+        .col-lg-3.col-sm-6.col-xs-6.col-xxs-12
+          .smallstat.box.overlay-red
+            .box-header.overlay-red
+              h2 RIMS Temp
+              a.halflings-icon.fullscreen.white.pull-right(href="#", data-toggle="modal", data-target="#temp-detail")
+            .boxchart-overlay.red
+              .boxchart(data-device-type="tempSensor", data-device-name="rims", data-device-arg="temp", data-output-type="sparkline", values="") 
+            span.value.white(data-device-type="tempSensor", data-device-name="rims", data-device-arg="temp", data-output-type="html") N/A
+            span.title.white &#176;FARENHEIT
+        .col-lg-3.col-sm-6.col-xs-6.col-xxs-12
+          .smallstat.box.overlay-red
+            .box-header.overlay-red
+              h2 MLT Temp
+              a.halflings-icon.fullscreen.white.pull-right(href="#", data-toggle="modal", data-target="#temp-detail")
+            .boxchart-overlay.red
+              .boxchart(data-device-type="tempSensor", data-device-name="mlt", data-device-arg="temp", data-output-type="sparkline", values="") 
+            span.value.white(data-device-type="tempSensor", data-device-name="mlt", data-device-arg="temp", data-output-type="html") N/A
+            span.title.white &#176;FARENHEIT
+        .col-lg-3.col-sm-6.col-xs-6.col-xxs-12
+          .smallstat.box.overlay-red
+            .box-header.overlay-red
+              h2 BK Temp
+              a.halflings-icon.fullscreen.white.pull-right(href="#", data-toggle="modal", data-target="#temp-detail")
+            .boxchart-overlay.red
+              .boxchart(data-device-type="tempSensor", data-device-name="bk", data-device-arg="temp", data-output-type="sparkline", values="") 
+            span.value.white(data-device-type="tempSensor", data-device-name="bk", data-device-arg="temp", data-output-type="html") N/A
+            span.title.white &#176;FARENHEIT
+        .col-lg-3.col-sm-6.col-xs-6.col-xxs-12
+          .smallstat.box.overlay-red
+            .box-header.overlay-red
+              h2 SYS Temp
+              a.halflings-icon.fullscreen.white.pull-right(href="#", data-toggle="modal", data-target="#temp-detail")
+            .boxchart-overlay.red
+              .boxchart(data-device-type="tempSensor", data-device-name="sys", data-device-arg="temp", data-output-type="sparkline", values="") 
+            span.value.white(data-device-type="tempSensor", data-device-name="sys", data-device-arg="temp", data-output-type="html") N/A
+            span.title.white &#176;FARENHEIT
+
+      .row
+        h2 Temperature Control
+      .row
+        .col-lg-12.col-md-12
+          h3.grey
+            | RIMS | Setpoint: 
+            span.must.sliderLabel(data-name="rimsTemp", data-device-type="tempController", data-device-name="rims", data-device-arg="setpoint", data-output-type="html") 100
+            span.pull-right(data-device-type="tempController", data-device-name="rims", data-device-arg="duration", data-output-type="html") 00:00:00
+            span.pull-right Duration:
+          .slider.sliderMin(data-name="rimsTemp", data-default-value="152", data-min="80", data-max="180", data-device-type="tempController", data-device-name="rims", data-device-arg="setpoint", data-output-type="slider")
+          // .tempFlotChart(data-device-name="rims", data-device-type="tempSensor", data-device-arg="chartData", data-output-type="tempFlotChart")
+          button.btn.btn-primary.btn-wide.btnOnOff(type="button", data-device-type="tempController", data-device-name="rims", data-device-arg="state", data-output-type="button", data-device-state="true")
+            | RIMS Temp Control
+      .row
+        h2 Pump Control
+      .row
+        .col-lg-3.col-sm-6.col-xs-6.col-xxs-12
+          .smallstat.box
+            .box-header
+              h2 RIMS Pump
+              a.halflings-icon.cog.white.pull-right(href="#")
+              a.halflings-icon.refresh.white.pull-right(href="#")
+              a.glyphButton.halflings-icon.play.white.pull-right(href="#", data-device-type="pump", data-device-name="rims", data-device-arg="state", data-device-state="true", data-glyph-true="stop", data-glyph-false="play" data-output-type="glyphButton")
+            .boxchart-overlay.blue
+              .boxchart(data-device-type="pump", data-device-name="rims", data-device-arg="flowrate", data-output-type="sparkline" values="5,3,4")
+            span.value.white(data-device-type="pump", data-device-name="rims", data-device-arg="flowrate", data-output-type="html") 0
+            span.title.white GAL/MINUTE
+            .slider.small.sliderMin.sliderLeft.pull-left(data-name="rimsPump", data-default-value="100", data-min="0", data-max="100", data-device-type="pump", data-device-name="rims", data-device-arg="power", data-output-type="slider")
+            .field_notice.white.sliderMinLabel(style="margin-left:62%")
+              | Power:
+              span.must.sliderLabel(data-name="rimsPump", data-device-type="pump", data-device-name="rims", data-device-arg="power", data-output-type="html") 100
+              | %
+              
+        .col-lg-3.col-sm-6.col-xs-6.col-xxs-12
+          .smallstat.box
+            .box-header
+              h2 MLT Pump
+              a.halflings-icon.cog.white.pull-right(href="#")
+              a.halflings-icon.refresh.white.pull-right(href="#")
+              a.glyphButton.halflings-icon.play.white.pull-right(href="#", data-device-type="pump", data-device-name="mlt", data-device-arg="state", data-device-state="true", data-glyph-true="stop", data-glyph-false="play" data-output-type="glyphButton")
+            .boxchart-overlay.blue
+              .boxchart(data-device-type="pump", data-device-name="mlt", data-device-arg="flowrate", data-output-type="sparkline" values="5,3,4")
+            span.value.white(data-device-type="pump", data-device-name="mlt", data-device-arg="flowrate", data-output-type="html") 0
+            span.title.white GAL/MINUTE
+            .slider.small.sliderMin.sliderLeft.pull-left(data-name="mltPump", data-default-value="100", data-min="0", data-max="100", data-device-type="pump", data-device-name="mlt", data-device-arg="power", data-output-type="slider")
+            .field_notice.white.sliderMinLabel(style="margin-left:62%")
+              | Power:
+              span.must.sliderLabel(data-name="mltPump", data-device-type="pump", data-device-name="mlt", data-device-arg="power", data-output-type="html") 100
+              | %
+            
+        .col-lg-3.col-sm-6.col-xs-6.col-xxs-12
+          .smallstat.box
+            .box-header
+              h2 HLT Pump
+              a.halflings-icon.cog.white.pull-right(href="#")
+              a.halflings-icon.refresh.white.pull-right(href="#")
+              a.glyphButton.halflings-icon.play.white.pull-right(href="#", data-device-type="pump", data-device-name="hlt", data-device-arg="state", data-device-state="true", data-glyph-true="stop", data-glyph-false="play" data-output-type="glyphButton")
+            .boxchart-overlay.blue
+              .boxchart(data-device-type="pump", data-device-name="hlt", data-device-arg="flowrate", data-output-type="sparkline" values="5,3,4")
+            span.value.white(data-device-type="pump", data-device-name="hlt", data-device-arg="flowrate", data-output-type="html") 0
+            span.title.white GAL/MINUTE
+            .slider.small.sliderMin.sliderLeft.pull-left(data-name="hltPump", data-default-value="100", data-min="0", data-max="100", data-device-type="pump", data-device-name="hlt", data-device-arg="power", data-output-type="slider")
+            .field_notice.white.sliderMinLabel(style="margin-left:62%")
+              | Power:
+              span.must.sliderLabel(data-name="hltPump", data-device-type="pump", data-device-name="hlt", data-device-arg="power", data-output-type="html") 100
+              | %
+
+        .col-lg-3.col-sm-6.col-xs-6.col-xxs-12
+          .smallstat.box
+            .box-header
+              h2 BK Pump
+              a.halflings-icon.cog.white.pull-right(href="#")
+              a.halflings-icon.refresh.white.pull-right(href="#")
+              a.glyphButton.halflings-icon.play.white.pull-right(href="#", data-device-type="pump", data-device-name="bk", data-device-arg="state", data-device-state="true", data-glyph-true="stop", data-glyph-false="play" data-output-type="glyphButton")
+            .boxchart-overlay.blue
+              .boxchart(data-device-type="pump", data-device-name="bk", data-device-arg="flowrate", data-output-type="sparkline" values="5,3,4")
+            span.value.white(data-device-type="pump", data-device-name="bk", data-device-arg="flowrate", data-output-type="html") 0
+            span.title.white GAL/MINUTE
+
+
+        // /col
+      // /col
+      .row
+        h2 Auxillary Control
+      .row
+        .col-lg-4.col-sm-4.col-xs-6.col-xxs-12
+          button.btn.btn-primary.btn-wide.btnOnOff(type="button", data-device-type="output", data-device-name="aux1", data-device-arg="state", data-output-type="button", data-device-state="true")
+            | Auxillary 1
+        .col-lg-4.col-sm-4.col-xs-6.col-xxs-12
+          button.btn.btn-primary.btn-wide.btnOnOff(type="button", data-device-type="output", data-device-name="aux2", data-device-arg="state", data-output-type="button", data-device-state="true")
+            | Auxillary 2
+        .col-lg-4.col-sm-4.col-xs-6.col-xxs-12
+          button.btn.btn-primary.btn-wide.btnOnOff(type="button", data-device-type="output", data-device-name="aux3", data-device-arg="state", data-output-type="button", data-device-state="true")
+            | Auxillary 3
+        .col-lg-4.col-sm-4.col-xs-6.col-xxs-12
+          button.btn.btn-primary.btn-wide.btnOnOff(type="button", data-device-type="output", data-device-name="aux4", data-device-arg="state", data-output-type="button", data-device-state="true")
+            | Auxillary 4
+        .col-lg-4.col-sm-4.col-xs-6.col-xxs-12
+          button.btn.btn-primary.btn-wide.btnOnOff(type="button", data-device-type="output", data-device-name="aux5", data-device-arg="state", data-output-type="button", data-device-state="true")
+            | Auxillary 5
+        .col-lg-4.col-sm-4.col-xs-6.col-xxs-12
+          button.btn.btn-primary.btn-wide.btnOnOff(type="button", data-device-type="output", data-device-name="aux6", data-device-arg="state", data-output-type="button", data-device-state="true")
+            | Auxillary 6
+        .col-lg-4.col-sm-4.col-xs-6.col-xxs-12
+          button.btn.btn-primary.btn-wide.btnOnOff(type="button", data-device-type="output", data-device-name="rims_disconnect", data-device-arg="state", data-output-type="button", data-device-state="true")
+            | RIMS Element Disconnect
+    // </div>< -- !--/container
+    .clearfix
+    footer
+      p
+        span(style="text-align:left;float:left")
+          | &#169; 2014
+          a(href="#", alt="brewbone brewing systems") brewbone brewing systems
+        span.hidden-phone(style="text-align:right;float:right")
+          | Powered by:
+          a(href="#", alt="brewbone") &#60;brewbone&#62;
+    // start: JavaScript
+    //if !IE
+    script(src="assets/js/jquery-2.0.3.min.js")
+    // <![endif]
+    //if IE
+      script(src="assets/js/jquery-1.10.2.min.js")
+    //if !IE
+    script(type="text/javascript")
+      window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+    // <![endif]
+    //if IE
+      script(type="text/javascript")
+        window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+    script(src="assets/js/jquery-migrate-1.2.1.min.js")
+    script(src="assets/js/bootstrap.min.js")
+    script(src="assets/js/underscore-min.js")
+    script(src="/socket.io/socket.io.js")
+    // page scripts
+    script(src="assets/js/jquery-ui-1.10.3.custom.min.js")
+    script(src="assets/js/jquery.ui.touch-punch.min.js")
+    script(src="assets/js/jquery.knob.modified.min.js")
+    script(src="assets/js/jquery.knob.min.js")
+    script(src="assets/js/jquery.sparkline.min.js")
+    script(src="assets/js/jquery.autosize.min.js")
+    script(src="assets/js/jquery.placeholder.min.js")
+    //if lte IE 8
+      script(language="javascript", type="text/javascript", src="assets/js/excanvas.min.js")
+    script(src="assets/js/jquery.flot.min.js")
+    script(src="assets/js/jquery.flot.pie.min.js")
+    script(src="assets/js/jquery.flot.stack.min.js")
+    script(src="assets/js/jquery.flot.resize.min.js")
+    script(src="assets/js/jquery.flot.time.min.js")
+    script(src="assets/js/counter.min.js")
+    script(src="assets/js/jquery.noty.min.js")
+    script(src="assets/js/jquery.raty.min.js")
+    script(src="assets/js/jquery.gritter.min.js")
+    script(src="assets/js/brewbone-client.js")
+    // theme scripts
+    script(src="assets/js/uncompressed/custom.js")
+    script(src="assets/js/uncompressed/core.js")
+    // inline scripts related to this page
+    // script(src="assets/js/pages/index.js")
+    // script(src="assets/js/brew-dashboard.js")
+    // end: JavaScript

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<!-- start: Meta -->
+	<meta charset="utf-8">
+	<title>brewery dashboard | brewbone brewing systems</title>
+	<meta name="description" content="brewing beer down to the bone">
+	<meta name="author" content="josh peltier">
+	<meta name="keyword" content="#">
+	<!-- end: Meta -->
+	
+	<!-- start: Mobile Specific -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- end: Mobile Specific -->
+	
+	<!-- start: CSS -->
+	<link href="../public/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../public/assets/css/style.css" rel="stylesheet">
+	<link href="../public/assets/css/retina.min.css" rel="stylesheet">
+	<!-- end: CSS -->
+	
+
+	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	
+	  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="../public/assets/js/respond.min.js"></script>
+		<script src="../public/assets/css/ie6-8.css"></script>
+		
+	<![endif]-->
+	
+	<!-- start: Favicon and Touch Icons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../public/assets/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../public/assets/ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../public/assets/ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="http://localhost:8888/bootstrap/simpliq2/ico/apple-touch-icon-57-precomposed.png">
+	<link rel="shortcut icon" href="http://localhost:8888/bootstrap/simpliq2/ico/favicon.png">
+	<!-- end: Favicon and Touch Icons -->	
+		
+</head>
+
+<body>
+		<!-- start: Header -->
+
+		<!-- <div class="container"> -->
+		
+				
+			<!-- start: Main Menu -->
+
+						
+			<!-- start: Content -->
+			<div id="content" class="col-lg-12 col-sm-12">
+			
+			
+				<div class="row"><h1>Temperature Monitors</h1></div>
+			<div class="row">
+				
+				<div class="col-lg-3 col-sm-6 col-xs-6 col-xxs-12">
+					<div class="smallstat box overlay-red">
+					<div class="box-header overlay-red"><h2>RIMS Temp</h2><a href="#" class="halflings-icon fullscreen white pull-right" data-toggle="modal" data-target="#temp-detail"></a></div>
+						<div class="boxchart-overlay red">
+							<div class="boxchart">5,6,7,2,0,4,2,4,8,2,3,3,2,5,6,7,2,0,4,2,4,8,2,3,3,2</div>
+						</div>	
+						<span class="value white">152.1</span>
+						<span class="title white">&deg;FARENHEIT</span>
+					</div>
+				</div><!--/col-->
+				
+				<div class="col-lg-3 col-sm-6 col-xs-6 col-xxs-12">
+					<div class="smallstat overlay-red box">
+					<div class="box-header overlay-red"><h2>MLT Temp</h2><a href="#" class="halflings-icon fullscreen white pull-right" data-toggle="modal" data-target="#temp-detail"></a></div>
+						<div class="boxchart-overlay red">
+							<div class="boxchart">5,6,7,2,0,4,2,4,8,2,3,3,2</div>
+						</div>	
+						<span class="value white">152.1</span>
+						<span class="title white">&deg;FARENHEIT</span>
+					</div>
+				</div><!--/col-->
+				
+				<div class="col-lg-3 col-sm-6 col-xs-6 col-xxs-12">
+					<div class="smallstat box overlay-red">
+					<div class="box-header overlay-red"><h2>BK Temp</h2><a href="#" class="halflings-icon fullscreen white pull-right" data-toggle="modal" data-target="#temp-detail"></a></div>
+						<div class="boxchart-overlay red">
+							<div class="boxchart">5,6,7,2,0,4,2,4,8,2,3,3,2</div>
+						</div>	
+						<span class="value white">152.1</span>
+						<span class="title white">&deg;FARENHEIT</span>
+					</div>
+				</div><!--/col-->
+				
+				<div class="col-lg-3 col-sm-6 col-xs-6 col-xxs-12">
+					<div class="smallstat box overlay-red">
+					<div class="box-header overlay-red"><h2>HLT Temp</h2><a href="#" class="halflings-icon fullscreen white pull-right" data-toggle="modal" data-target="#temp-detail"></a></div>
+						<div class="boxchart-overlay red">
+							<div class="boxchart">5,6,7,2,0,4,2,4,8,2,3,3,2</div>
+						</div>	
+						<span class="value white">152.1</span>
+						<span class="title white">&deg;FARENHEIT</span>
+					</div>
+				</div><!--/col-->
+				
+			
+			</div><!--/row-->
+
+			<div class="row"><h2>Temperature Control</h2></div>
+
+			<div class="row">
+
+				<div class="col-lg-12 col-md-12">
+					
+
+						
+
+							<h2 class="grey">RIMS | Setpoint: 152&deg;f
+    					  <a href="#" class="pull-right" data-device-type="pid" data-device-name="rims" data-toggle="modal" data-target="#rims-settings"><span class="glyphicon glyphicon-cog grey"></span></a>
+    					  <a href="#" class="glyphicon glyphicon-play grey pull-right" style="padding-right:5px;"></a>
+
+</h2>
+							<div class="chart-type2" style="height:280px;"></div>
+
+				</div><!--/col-->
+				
+				
+				
+
+				</div>
+
+
+
+				
+				<div class="row">
+				  <div id="rims-settings" class="modal fade">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title">RIMS Settings</h4>
+                </div>
+                <div class="modal-body">
+                  <form class="form" role="form">
+                      <div class="form-group">
+                        <label for="rims-setpoint" class=" control-label">Setpoint</label>
+                        <div class="">
+                          <input type="text" class="form-control" id="rims-setpoint" placeholder="Setpoint">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="rims-duration" class=" control-label">Duration</label>
+                        <div class="">
+                          <input type="text" class="form-control" id="rims-duration" placeholder="Duration">
+                        </div>
+                      </div>
+                      
+                      <div class="form-inline form-group" role="form"> 
+                        <div class="form-group">
+                          <label class=" control-label" for="exampleInputEmail2">Kp</label>
+                          <input type="text" class="form-control col-lg-1" id="exampleInputEmail2" placeholder="Proportional Gain">
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label" for="exampleInputPassword2">Ki</label>
+                          <input type="text" class="form-control" id="exampleInputPassword2" placeholder="Integral Gain">
+                        </div>
+                        <div class="form-group control-label">
+                          <label class="" for="exampleInputPassword2">Kd</label>
+                          <input type="text" class="form-control" id="exampleInputPassword2" placeholder="Derivitive Gain">
+                        </div>
+                        <div class="checkbox">
+                          <label>
+                            <input type="checkbox"> Autotune
+                          </label>
+                        </div>
+                      </div>
+                    </form>
+                  
+                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save</button>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+				</div><!-- / .row -->
+				
+<div class="row"><h2>Pump Control</h2></div>
+
+				<div class="row">
+					
+            <div class="col-lg-3 col-sm-6 col-xs-6 col-xxs-12">
+  					<div class="smallstat box">
+    					<div class="box-header">
+    					  <h2>RIMS Pump</h2>
+    					  <a href="#" class="halflings-icon cog white pull-right"></a>
+    					  <a href="#" class="halflings-icon refresh white pull-right"></a>
+    					  <a href="#" class="halflings-icon play white pull-right"></a>
+    					</div>
+  						<div class="boxchart-overlay blue">
+  							<div class="boxchart">5,6,7,2,0,4,2,4,8,2,3,3,2</div>
+  						</div>	
+  						<span class="value white">1.21</span>
+  						<span class="title white">GAL/MINUTE</span>
+  						<div class="slider small sliderMin sliderLeft pull-left"data-name="rimsPump" data-default-value="100" data-min="0" data-max="100"></div>
+  						<div class="field_notice white">Power: <span class="must sliderLabel" data-name="rimsPump">100</span>%</div>
+  					</div>
+  				</div><!--/col-->
+  				
+  				            <div class="col-lg-3 col-sm-6 col-xs-6 col-xxs-12">
+  					<div class="smallstat box">
+    					<div class="box-header">
+    					  <h2>MLT Pump</h2>
+    					  <a href="#" class="halflings-icon cog white pull-right"></a>
+    					  <a href="#" class="halflings-icon stop white pull-right"></a>
+    					  <a href="#" class="halflings-icon off white pull-right"></a>
+    					</div>
+  						<div class="boxchart-overlay blue">
+  							<div class="boxchart">5,6,7,2,0,4,2,4,8,2,3,3,2</div>
+  						</div>	
+  						<span class="value white">4.52</span>
+  						<span class="title white">GALLONS</span>
+  						<div class="slider small sliderMin sliderLeft pull-left"data-name="rimsPump" data-default-value="100" data-min="0" data-max="100"></div>
+										<div class="field_notice white">Power: <span class="must sliderLabel" data-name="rimsPump">100</span>%</div>
+  					</div>
+  				</div><!--/col-->
+  				
+  				            <div class="col-lg-3 col-sm-6 col-xs-6 col-xxs-12">
+  					<div class="smallstat box">
+    					<div class="box-header">
+    					  <h2>HLT Pump</h2>
+    					  <a href="#" class="halflings-icon cog white pull-right"></a>
+    					  <a href="#" class="halflings-icon refresh white pull-right"></a>
+    					  <a href="#" class="halflings-icon play white pull-right"></a>
+    					</div>
+  						<div class="boxchart-overlay blue">
+  							<div class="boxchart">5,6,7,2,0,4,2,4,8,2,3,3,2</div>
+  						</div>	
+  						<span class="value white">1.21</span>
+  						<span class="title white">GAL/MINUTE</span>
+  						<div class="slider small sliderMin sliderLeft pull-left"data-name="rimsPump" data-default-value="100" data-min="0" data-max="100"></div>
+										<div class="field_notice white">Power: <span class="must sliderLabel" data-name="rimsPump">100</span>%</div>
+  					</div>
+  				</div><!--/col-->
+  				
+  				            <div class="col-lg-3 col-sm-6 col-xs-6 col-xxs-12">
+  					<div class="smallstat box">
+    					<div class="box-header">
+    					  <h2>BK Pump</h2>
+    					  <a href="#" class="halflings-icon cog white pull-right"></a>
+    					  <a href="#" class="halflings-icon refresh white pull-right"></a>
+    					  <a href="#" class="halflings-icon play white pull-right"></a>
+    					</div>
+  						<div class="boxchart-overlay blue">
+  							<div class="boxchart">5,6,7,2,0,4,2,4,8,2,3,3,2</div>
+  						</div>	
+  						<span class="value white">1.21</span>
+  						<span class="title white">GAL/MINUTE</span>
+  					</div>
+  				</div><!--/col-->
+  				
+
+					
+				</div><!--/col-->			
+
+				<div class="row"><h2>Auxillary Control</h2></div>	
+				
+				<div class="row">
+
+				      <div class="col-lg-4 col-sm-4 col-xs-6 col-xxs-12">
+				        <button type="button" class="btn btn-primary btn-wide">
+                          <span class="glyphicon glyphicon-play"></span>
+                          Auxillary 1</button>
+				      </div>
+
+				      <div class="col-lg-4 col-sm-4 col-xs-6 col-xxs-12">
+				        <button type="button" class="btn btn-primary btn-wide">
+                          <span class="glyphicon glyphicon-play"></span>
+                          Auxillary 2</button>
+				      </div>
+
+				      <div class="col-lg-4 col-sm-4 col-xs-6 col-xxs-12">
+				        <button type="button" class="btn btn-primary btn-wide">
+                          <span class="glyphicon glyphicon-play"></span>
+                          Auxillary 3</button>
+				      </div>
+
+				      <div class="col-lg-4 col-sm-4 col-xs-6 col-xxs-12">
+				        <button type="button" class="btn btn-primary btn-wide">
+                          <span class="glyphicon glyphicon-play"></span>
+                          Auxillary 4</button>
+				      </div>
+
+				      <div class="col-lg-4 col-sm-4 col-xs-6 col-xxs-12">
+				        <button type="button" class="btn btn-primary btn-wide">
+                          <span class="glyphicon glyphicon-play"></span>
+                          Auxillary 5</button>
+				      </div>
+
+				      <div class="col-lg-4 col-sm-4 col-xs-6 col-xxs-12">
+				        <button type="button" class="btn btn-primary btn-wide">
+                          <span class="glyphicon glyphicon-play"></span>
+                          Auxillary 6</button>
+				      </div>
+
+				    </div>
+				  </div>
+
+			
+
+		
+	<!-- </div>< -->!--/container-->
+	
+		
+		<div class="modal fade" id="temp-detail">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">Temp History Detail</h4>
+					</div>
+					<div class="modal-body">
+					
+					  <div class="chart-popup" style="height:280px;"></div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+	
+	<div class="clearfix"></div>
+	
+	<footer>
+		<p>
+			<span style="text-align:left;float:left">&copy; 2014 <a href="#" alt="brewbone brewing systems">brewbone brewing systems</a></span>
+			<span class="hidden-phone" style="text-align:right;float:right">Powered by: <a href="#" alt="brewbone">&lt;brewbone&gt;</a></span>
+		</p>
+
+	</footer>
+	
+	<!-- start: JavaScript-->
+	<!--[if !IE]>-->
+
+			<script src="../public/assets/js/jquery-2.0.3.min.js"></script>
+
+	<!--<![endif]-->
+
+	<!--[if IE]>
+	
+		<script src="../public/assets/js/jquery-1.10.2.min.js"></script>
+	
+	<![endif]-->
+
+	<!--[if !IE]>-->
+
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='../public/assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+			</script>
+
+	<!--<![endif]-->
+
+	<!--[if IE]>
+	
+		<script type="text/javascript">
+	 	window.jQuery || document.write("<script src='../public/assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+		</script>
+		
+	<![endif]-->
+	<script src="../public/assets/js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="../public/assets/js/bootstrap.min.js"></script>
+	
+		
+	
+	
+	<!-- page scripts -->
+	<script src="../public/assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="../public/assets/js/jquery.ui.touch-punch.min.js"></script>
+	<script src="../public/assets/js/jquery.sparkline.min.js"></script>
+	<script src="../public/assets/js/fullcalendar.min.js"></script>
+	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../public/assets/js/excanvas.min.js"></script><![endif]-->
+	<script src="../public/assets/js/jquery.flot.min.js"></script>
+	<script src="../public/assets/js/jquery.flot.pie.min.js"></script>
+	<script src="../public/assets/js/jquery.flot.stack.min.js"></script>
+	<script src="../public/assets/js/jquery.flot.resize.min.js"></script>
+	<script src="../public/assets/js/jquery.flot.time.min.js"></script>
+	<script src="../public/assets/js/jquery.autosize.min.js"></script>
+	<script src="../public/assets/js/jquery.placeholder.min.js"></script>
+	
+	<!-- theme scripts -->
+	<script src="../public/assets/js/uncompressed/custom.js"></script>
+	<script src="../public/assets/js/uncompressed/core.js"></script>
+	
+	<!-- inline scripts related to this page -->
+	<script src="../public/assets/js/pages/index.js"></script>
+	
+	<!-- end: JavaScript-->
+	
+</body>
+</html>

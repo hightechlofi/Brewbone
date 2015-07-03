@@ -1,0 +1,186 @@
+extends layout
+
+block content
+  .row.hideInIE8
+    .col-lg-12
+      .box
+        .box-header
+          h2
+            i.icon-dashboard
+            | Temperature Sensors
+          .box-icon
+            a.btn-minimize(href='#')
+              i.icon-chevron-up
+        .box-content
+          .tempStats.row
+            .col-md-3.col-sm-3
+              .tempStatBox
+                .tempStat(data-device-type="temp_sensor", data-device-name="sys", data-device-arg="temp", data-output-type="tempStat") 0
+                span System Temp
+            // /col
+            .col-md-3.col-sm-3
+              .tempStatBox
+                .tempStat(data-device-type="temp_sensor", data-device-name="mlt", data-device-arg="temp", data-output-type="tempStat") 0
+                span Mash Tun Temp
+            // /col
+            .col-md-3.col-sm-3
+              .tempStatBox
+                .tempStat(data-device-type="temp_sensor", data-device-name="rims", data-device-arg="temp", data-output-type="tempStat") 0
+                span RIMS Temp
+            // /col
+            .col-md-3.col-sm-3
+              .tempStatBox
+                .tempStat(data-device-type="temp_sensor", data-device-name="sys", data-device-arg="temp", data-output-type="tempStat") 0
+                span Liquor Tun Temp
+            // /col
+  // /row
+  .row.hideInIE8
+    .col-lg-12
+      .box
+        .box-header
+          h2
+            i.icon-tint
+            | Pump Control
+          .box-icon
+            a.btn-minimize(href='#')
+              i.icon-chevron-up
+        .box-content
+          .circleStats.row
+            .col-md-3.col-sm-3
+              .circleStatsItemBox
+                .header
+                  | Boil
+                  label.switch.switch-info.pull-right
+                    input.switch-input(type='checkbox', data-device-type="pump", data-device-name="mlt", data-device-arg="state", data-output-type="switch")
+                    span.switch-label(data-on='On', data-off='Off')
+                    span.switch-handle
+                span.percent gpm
+                .circleStat
+                  input.knobControl(type='text', value='0', data-readonly='readOnly', data-max="4", data-device-type="pump", data-device-name="mlt", data-device-arg="flowrate", data-output-type="knob")
+                .footer
+                  span.value
+                    span.number(data-device-type="pump", data-device-name="mlt", data-device-arg="totalizer", data-output-type="html") 0.0
+                    span.unit GAL
+                    a(href='#')
+                      i.icon-refresh  
+              .smallchart.blue.box.mobileHalf
+                .content
+                  .chart-stat
+                    .chart.white(data-device-type="pump", data-device-name="mlt", data-device-arg="flowrate", data-output-type="sparkline", values="0,0")
+                span.value
+                  span.number(data-device-type="pump", data-device-name="mlt", data-device-arg="flowrate", data-output-type="html") 0.0
+                  span.unit GPM
+            // /col
+            .col-md-3.col-sm-3
+              .circleStatsItemBox
+                .header
+                  | Mash
+                  label.switch.switch-info.pull-right
+                    input.switch-input(type="checkbox", data-device-type="pump", data-device-name="mlt", data-device-arg="state", data-output-type="switch")
+                    span.switch-label(data-on='On', data-off='Off')
+                    span.switch-handle
+
+                span.percent percent
+                .circleStat
+                  input.knobControl(type='text', value='0', data-device-type="pump", data-device-name="mlt", data-device-arg="power", data-output-type="knob")
+                .footer
+                  span.value
+                    span.number(data-device-type="pump", data-device-name="mlt", data-device-arg="totalizer", data-output-type="html") 0.0
+                    span.unit GAL 
+                    a(href='#')
+                      i.icon-refresh 
+                    a.pull-right(href='#')
+                      i.icon-play  
+              .smallchart.blue.box.mobileHalf
+                .content
+                  .chart-stat
+                    .chart.white(data-device-type="pump", data-device-name="mlt", data-device-arg="flowrate", data-output-type="sparkline", values="0,0")
+                span.value
+                  span.number(data-device-type="pump", data-device-name="mlt", data-device-arg="flowrate", data-output-type="html") 0.0
+                  span.unit GPM
+            // /col
+            .col-md-3.col-sm-3
+              .circleStatsItemBox
+                .header
+                  | RIMS
+                  label.switch.switch-info.pull-right
+                    input.switch-input(type='checkbox', data-device-type="pump", data-device-name="rims", data-device-arg="state", data-output-type="switch")
+                    span.switch-label(data-on='On', data-off='Off')
+                    span.switch-handle
+                span.percent percent
+                .circleStat
+                  input.knobControl(type='text', value='0', data-device-type="pump", data-device-name="rims", data-device-arg="power", data-output-type="knob")
+                .footer
+                  span.value
+                    span.number(data-device-type="pump", data-device-name="rims", data-device-arg="totalizer", data-output-type="html") 0.0
+                    span.unit GAL
+                    a(href='#')
+                      i.icon-refresh  
+              .smallchart.blue.box.mobileHalf
+                .content
+                  .chart-stat
+                    .chart.white(data-device-type="pump", data-device-name="rims", data-device-arg="flowrate", data-output-type="sparkline", values="0,0")
+                span.value
+                  span.number(data-device-type="pump", data-device-name="rims", data-device-arg="flowrate", data-output-type="html") 0.0
+                  span.unit GPM
+            // /col
+            .col-md-3.col-sm-3
+              .circleStatsItemBox
+                .header
+                  | HLT
+                  label.switch.switch-info.pull-right
+                    input.switch-input(type='checkbox', data-device-type="pump", data-device-name="hlt", data-device-arg="state", data-output-type="switch")
+                    span.switch-label(data-on='On', data-off='Off')
+                    span.switch-handle
+                span.percent percent
+                .circleStat
+                  input.knobControl(type='text', value='0', data-device-type="pump", data-device-name="hlt", data-device-arg="power", data-output-type="knob")
+                .footer
+                  span.value
+                    span.number(data-device-type="pump", data-device-name="hlt", data-device-arg="totalizer", data-output-type="html") 0.0
+                    span.unit GAL
+                    a(href='#')
+                      i.icon-refresh  
+              .smallchart.blue.box.mobileHalf
+                .content
+                  .chart-stat
+                    .chart.white(data-device-type="pump", data-device-name="hlt", data-device-arg="flowrate", data-output-type="sparkline", values="0,0")
+                span.value
+                  span.number(data-device-type="pump", data-device-name="hlt", data-device-arg="flowrate", data-output-type="html") 0.0
+                  span.unit GPM
+            // /col
+  // /row
+  .row.hideInIE8
+    .col-lg-12
+      .box
+        .box-header
+          h2
+            i.icon-refresh
+            | Reciruclating Infusion Mash
+          .box-icon
+            a.btn-minimize(href='#')
+              i.icon-chevron-up
+          label.switch.switch-info.pull-right
+            input.switch-input(type='checkbox', data-device-type="temp_controller", data-device-name="rims", data-device-arg="state", data-output-type="switch")
+            span.switch-label(data-on='On', data-off='Off')
+            span.switch-handle
+        .box-content
+          .field_notice
+            | Setpoint:
+            span.must.sliderMinLabel(data-device-type="temp_controller", data-device-name="rims", data-device-arg="setpoint", data-output-type="html") 152°
+          .slider.sliderMin.sliderBlue(data-device-type="temp_controller", data-device-name="rims", data-device-arg="setpoint", data-output-type="slider")
+          h3 Mash Temperature
+          hr
+          #activeUsers(style='height: 300px;',data-device-type="temp_controller", data-device-name="rims", data-device-arg="temp-chart", data-output-type="flot", data-values="[[1,2],[2,4],[3,3]]")
+          h3
+            | RIMS Output
+          hr
+          #serverLoad(style='height: 300px;',data-device-type="temp_controller", data-device-name="rims", data-device-arg="power-chart", data-output-type="flot", data-values="")
+    // /col
+  // /row
+  // end: Content
+  // /row
+  // /container
+
+block page-scripts
+  script(src='assets/js/brew-dashboard.js')
